@@ -29,7 +29,7 @@
 #endif
 #endif
 
-#include <spotify/api.h>
+#include <libspotify/api.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <cstdlib>
