@@ -1,80 +1,14 @@
 spotyxbmc - Spotify in XBMC
 
-INSTALL COMPILED SPOTYXBMC IN WINDOWS
---------------------------------
-1. Download http://cloud.github.com/downloads/akezeke/spotyxbmc/spotyxbmc_alpha015.exe
-
-2. Run spotyxbmc_alpha015.exe
-
-3. Enable the music library
-
---------------------------------
-
-INSTALL COMPILED SPOTYXBMC IN UBUNTU32
---------------------------------
-You are recommend to use Ubuntu 9.10.
-Pulse-audio should be disabled and it is recommended that you update your alsa-drivers to at least 1.0.22.
-Follow this guide:
-http://monespaceperso.org/blog-en/2009/12/17/upgrade-alsa-1-0-22-on-ubuntu-karmic-koala-9-10/
-
-1. Open a terminal
-
-2. # wget http://cloud.github.com/downloads/akezeke/spotyxbmc/spotyxbmc_alpha014_ubuntu32.tar.gz
-
-3. # tar -xvf spotyxbmc_alpha014_ubuntu32.tar.gz
-
-4. # cd spotyxbmc_alpha014_ubuntu32
-
-5. # sudo chmod +x ./install.sh
-
-6. # sudo ./install.sh
-
-7. # xbmc
-
-8. Scan music to your music library
-
-9. Enable library
-
---------------------------------
-
-INSTALL COMPILED SPOTYXBMC IN UBUNTU64
---------------------------------
-You are recommend to use Ubuntu 9.10.
-Pulse-audio should be disabled and it is recommended that you update your alsa-drivers to at least 1.0.22.
-Follow this guide:
-http://monespaceperso.org/blog-en/2009/12/17/upgrade-alsa-1-0-22-on-ubuntu-karmic-koala-9-10/
-
-1. Open a terminal
-
-2. # wget http://cloud.github.com/downloads/akezeke/spotyxbmc/spotyxbmc_alpha014_ubuntu64.tar.gz
-
-3. # tar -xvf spotyxbmc_alpha014_ubuntu64.tar.gz
-
-4. # cd spotyxbmc_alpha014_ubuntu64
-
-5. # sudo chmod +x ./install.sh
-
-6. # sudo ./install.sh
-
-7. # xbmc
-
-8. Scan music to your music library
-
-9. Enable library
-
---------------------------------
-
 BUILD SPOTYXBMC YOURSELF
 --------------------------------
-Download openspotify.
+1. Download libspotify from http://developer.spotify.com/en/libspotify/overview/
 
-1. git clone git://github.com/noahwilliamsson/openspotify.git
-
-2. Follow instructions!
+2. Install libspotify (Follow instructions !)
 
 3. Get the full xbmc source from svn
 
-4. Download the spotyxbmc.diff and source files from from http://github.com/akezeke/spotyxbmc.
+4. Download the spotyxbmc.diff and source files from from http://github.com/Kitof/spotyxbmc.
 
 5. Replace the files in your downloaded xbmc source with the spotyxbmc ones.
 
@@ -86,7 +20,7 @@ Download openspotify.
 
 9. # ./configure --disable-pulse
 
-10. After ./configure manually add "-lopenspotify" to LIBS in Makefile.
+10. After ./configure manually add "-lspotify" to LIBS in Makefile.
 
 11. Get your own spotify API key from http://developer.spotify.com/en/libspotify/application-key/
    add it to the beggining of ./xbmc/xbmc/spotinterface.cpp.
@@ -133,9 +67,21 @@ KNOWN ISSUES
 - Changing of track to fast might cause a crash
 - Albums with multiple discs will only appear as one 
 
+FAQS
+--------------------------------
+
+- Q : "I've got "/usr/include/libspotify/api.h:52: error: duplicate ‘unsigned’" when i tried to compile
+
+- A : Use the api.h from the repository
 
 CHANGELOG
 --------------------------------
+
+fork from Kitof 001
+***********************
+- Compatible with libspotify 0.4
+- Compatible with latest xbmc revision
+
 alpha015
 ***********************
 - Music library can be enabled without adding any songs to it
